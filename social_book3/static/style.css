@@ -1,0 +1,125 @@
+body {
+    background-color: #E6E6FA; /* Lilás claro */
+    font-family: 'Arial', sans-serif; /* Fonte limpa e simples */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navegação superior */
+nav {
+    background-color: #ADD8E6; /* Azul claro */
+    padding: 15px 30px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #87CEEB; /* Azul um pouco mais forte */
+    border-radius: 5px;
+}
+
+nav p {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Ajustar conteúdo principal */
+.content {
+    width: 80%;
+    margin: 100px auto 30px auto; /* Ajuste para a barra de navegação fixa */
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 1000px;
+    min-height: 500px;
+}
+
+/* Formatação dos posts */
+.post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post .post-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4B0082; /* Roxo */
+}
+
+.post .post-content {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Botões */
+button, .button {
+    background-color: #ADD8E6; /* Azul claro */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #87CEEB; /* Azul um pouco mais forte */
+}
+
+/* Estilo do formulário (para login, cadastro, etc.) */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #4B0082; /* Roxo */
+    color: white;
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #6A5ACD; /* Roxo mais forte */
+}

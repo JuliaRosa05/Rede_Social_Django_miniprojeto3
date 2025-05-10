@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container m-auto p-6">
+
+    <!-- Cabeçalho -->
+    <h1 class="text-3xl font-bold mb-6">Configurações da Conta</h1>
+
+    <!-- Informações básicas -->
+    <div class="mb-6 bg-white p-4 rounded shadow">
+        <p><strong>Nome de usuário:</strong> {{ request.user.username }}</p>
+        <p><strong>Email:</strong> {{ request.user.email }}</p>
+    </div>
+
+    <!-- Abas de navegação -->
+    <ul class="flex space-x-4 overflow-x-auto mb-6 text-sm font-semibold text-gray-600 border-b">
+        <li class="pb-2 border-b-2 border-blue-500">Geral</li>
+        <li class="pb-2 hover:border-b-2 hover:border-blue-300 cursor-pointer">Perfil</li>
+        <li class="pb-2 hover:border-b-2 hover:border-blue-300 cursor-pointer">Privacidade</li>
+        <li class="pb-2 hover:border-b-2 hover:border-blue-300 cursor-pointer">Notificações</li>
+        <li class="pb-2 hover:border-b-2 hover:border-blue-300 cursor-pointer">Segurança</li>
+    </ul>
+
+    <!-- Formulário de edição -->
+    <div class="bg-white rounded-md shadow-md p-6 mb-8">
+        <form method="POST" enctype="multipart/form-data" class="grid grid-cols-1 gap-4">
+            {% csrf_token %}
+            <div>
+                <label for="id_bio" class="block font-medium">Sobre mim (Bio):</label>
+                {{ form.bio }}
+            </div>
+            <div>
+                <label for="id_profileimg" class="block font-medium">Foto de Perfil:</label>
+                {{ form.profileimg }}
+            </div>
+            <div class="flex justify-end space-x-4 mt-4">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">Salvar</button>
+                <button type="reset" class="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Configurações de privacidade -->
+    <div class="bg-white rounded-md shadow-md p-6">
+        <h2 class="text-xl font-semibold mb-4">Privacidade</h2>
+
+        <div class="space-y-4 text-sm text-gray-700">
+            <div class="flex justify-between items-center">
+                <span>Quem pode me seguir?</span>
+                <label class="switch"><input type="checkbox"><span class="switch-button"></span></label>
+            </div>
+            <div class="flex justify-between items-center">
+                <span>Mostrar minhas atividades?</span>
+                <label class="switch"><input type="checkbox" checked><span class="switch-button"></span></label>
+            </div>
+            <div class="flex justify-between items-center">
+                <span>Aparecer em buscadores?</span>
+                <label class="switch"><input type="checkbox"><span class="switch-button"></span></label>
+            </div>
+            <div class="flex justify-between items-center">
+                <span>Permitir comentários?</span>
+                <label class="switch"><input type="checkbox"><span class="switch-button"></span></label>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+

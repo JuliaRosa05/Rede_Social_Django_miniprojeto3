@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rede SociWOW</title>
+
+    {% load static %}
+
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+
+<!-- Navegação -->
+<nav>
+  {% if user.is_authenticated %}
+    <p>Olá, {{ user.username }}!</p>
+    <a href="{% url 'index' %}">Feed</a>
+    <a href="{% url 'setting' %}">Configurações</a>
+    <a href="{% url 'logout' %}">Logout</a>
+  {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Criar Conta</a>
+  {% endif %}
+</nav>
+
+<hr>
+
+<!-- Conteúdo -->
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
